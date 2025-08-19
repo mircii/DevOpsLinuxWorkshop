@@ -1,7 +1,11 @@
+[Unit]
+Description=Fetch weather and update MOTD
+After=network.target
+
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-EnvironmentFile=etc/default/weather
+EnvironmentFile=/etc/default/weather
 ExecStart=/sbin/weather.sh
 
 [Install]
