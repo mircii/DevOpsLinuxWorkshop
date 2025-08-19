@@ -65,6 +65,10 @@ It does the following:
 The service `/etc/systemd/system/weather.service` ensures the script runs at boot:
 
 ```ini
+[Unit]
+Description=Fetch weather and update MOTD
+After=network.target
+
 [Service]
 Type=oneshot
 RemainAfterExit=yes
